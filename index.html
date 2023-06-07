@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="tetris.js"></script>
     <title>Melih</title>
 </head>
 
 <body>
     <header class="header">
-        <a href="" class="logo">Melih.</a>
+        <a href="" class="logo">Melih the developer.</a>
 
         <nav class="navbar">
             <a href="#" style="--i:1" class="active">Home</a>
@@ -27,7 +29,7 @@
             <h3>Hello, It's</h3>
             <h1>Melih</h1>
             <h3>And I'm a <span class="multiple-text"></span> Developer</h3>
-            <p>I'm an 18 year old Istanbul born developer which codes since 2 years.</p>
+            <p>I'm an 18 year old Istanbul born developer who's codding for 2 years.</p>
             <div class="social-media">
                 <a href="http://twitter.com/melihhdev" style="--i:7">
                     <i class="bx bxl-twitter"></i>
@@ -40,15 +42,17 @@
                 </a>
             </div>
             <a href="#" class="btn">Download CV</a>
-
         </div>
-
-        <div class="home-image">
+        <div class="image-content">
             <img src="assets/background.png" alt="">
         </div>
     </section>
 
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <section class="tetris">
+        
+        <h1><span class="tetris-text"></span></h1>
+        <canvas id='my-canvas'></canvas>
+    </section>
     <script src="script.js"></script>
 </body>
 

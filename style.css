@@ -146,6 +146,21 @@ body {
     animation-delay: 2s
 }
 
+.tetris {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#my-canvas{
+    margin-top: 15vh;
+    /* margin-right: -40%; */
+    background: transparent;
+}
+
+
 
 /* KEYFRAMES ANIMATION */
 
