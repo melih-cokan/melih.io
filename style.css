@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', 'sans-serif';
+    text-align: center;
 }
 
 body {
-    background-color: #1f242d;
-    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #001514;
+    color: #FBFFFE;
 }
 
 .header {
@@ -31,7 +34,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     cursor: default;
-    opacity: 0  ;
+    opacity: 0;
     animation: slideRight 1s ease forwards;
 }
 
@@ -45,7 +48,7 @@ body {
     transition: .3s;
     opacity: 0;
     animation: slideTop .5s ease forwards;
-    animation-delay: calc(.2s * var(--i ));
+    animation-delay: calc(.2s * var(--i));
 }
 
 .navbar a:hover,
@@ -56,14 +59,20 @@ body {
 .home {
     display: flex;
     position: relative;
-    width: 100%;
+    width: max-content;
     height: 100vh;
     justify-content: space-between;
     align-items: center;
     padding: 70px 10% 0;
 }
 
+.home-content {
+    max-width: 100vw;
+    width: max-content;
+}
+
 .home-content h3 {
+    width: 100%;
     font-size: 32px;
     font-weight: 700;
     opacity: 0;
@@ -98,11 +107,15 @@ body {
     animation-delay: 1s;
 }
 
-.home-img img {
-    max-width: 450px;
-    opacity: 0;
-    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
-    animation-delay: 2s,3s;
+.image-content img {
+    max-width: 550px;
+    margin-right: 0;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .social-media a {
@@ -122,7 +135,7 @@ body {
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: calc(.2s * var(--i))
-} 
+}
 
 .social-media a:hover {
     background: #A10702;
@@ -140,13 +153,14 @@ body {
     letter-spacing: 1px;
     color: #fff;
     text-decoration: none;
-    font-weight: 600 ;
+    font-weight: 600;
     opacity: 0;
     animation: slideTop 1s ease forwards;
-    animation-delay: 2s
+    animation-delay: 2s;
 }
 
 .tetris {
+    background-color: #CD8987;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -154,83 +168,113 @@ body {
     align-items: center;
 }
 
-#my-canvas{
+#my-canvas {
     margin-top: 15vh;
     /* margin-right: -40%; */
     background: transparent;
 }
 
+.nav-colored {
+    background-color: #CDACA1 !important;
+    transition: .5s !important;
+    color: black;
+}
 
+.nav-colored-2 {
+    background-color: #001514 !important;
+    transition: .5s !important;
+    color: white;
+}
+
+.nav-transparent {
+    background-color: transparent !important;
+    color: white;
+    transition: .5s !important;
+}
+
+/* RESPONSIVE PROPERTIES */
+
+@media screen and (max-width: 800px) {
+    .social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-content {
+        display: none;
+    }
+
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar a {
+        display: none;
+    }
+
+    .tetris {
+        display: none;
+    }
+}
 
 /* KEYFRAMES ANIMATION */
 
-@keyframes slideRight{
+@keyframes slideRight {
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(100%);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-@keyframes slideLeft{
+@keyframes slideLeft {
     0% {
-        transform: translateX(100px);
+        transform: translateX(100%);
         opacity: 0;
     }
+
     100% {
         transform: translateX(0);
         opacity: 1;
     }
 }
 
-@keyframes slideTop{
-    0% {
-        opacity: 0; 
-        transform: translateY(100px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0); 
-
-    }
-}
-
-@keyframes slideBottom{
-    0% {
-        opacity: 0; 
-        transform: translateY(-100px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0); 
-
-    }
-}
-
-@keyframes zoomIn {
+@keyframes slideTop {
     0% {
         opacity: 0;
-        transform: scale(0);
+        transform: translateY(100%);
     }
+
     100% {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
+
     }
 }
 
-@keyframes floatImage {
+@keyframes slideBottom {
     0% {
-        transform: translateY(0);
+        opacity: 0;
+        transform: translateY(-100%);
     }
-    50% {
-        transform: translateY(-24px);
-    }
+
     100% {
+        opacity: 1;
         transform: translateY(0);
+
     }
 }
